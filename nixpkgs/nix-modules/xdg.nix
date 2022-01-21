@@ -46,6 +46,10 @@ with pkgs; {
       rev = "bfdde8e7912ad50a468c721b29b448c1ec5fa5e3";
       sha256 = "1k0nznqccc9y13x3pj6yd2j80nbnl3pyy8ihs91rf89gizb09w63";
     });
+
+    "wallpapers" = {
+      source = ../../wallpapers;
+    };
   };
 }
 

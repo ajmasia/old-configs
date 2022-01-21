@@ -36,6 +36,7 @@ with pkgs; [
   # Media
   spotify
   musescore
+  cava
 
   # Browsers
   chromium

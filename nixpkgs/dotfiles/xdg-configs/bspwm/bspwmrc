@@ -4,7 +4,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 pkill picom
 picom --experimental-backends &
-feh --bg-fill ~/syncthing/wallpaper_001.jpg
+feh --bg-fill ~/.config/wallpapers/wallpaper_001.jpg &
 ~/.config/polybar/launch.sh 
 dunst -conf ~/.config/dunst/dunstrc &
 

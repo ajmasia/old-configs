@@ -5,8 +5,9 @@ import ./git.nix //
   she = "sudo lvim /etc/nixos/hardware-configuration.nix";
   scs = "sudo nixos-rebuild switch";
 
-  # Home manager
+  # User config
   hm = "home-manager";
+  uc = "cd ~/repos/configs";
   uce = "lvim ~/repos/configs/nixpkgs/home.nix";
   ucs = "home-manager switch";
   ucvs = "home-manager switch -v";

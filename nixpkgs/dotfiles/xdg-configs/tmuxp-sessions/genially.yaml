@@ -1,0 +1,47 @@
+session_name: All in watch mode
+start_directory: ~/dev_projects/genially/mono
+
+windows:
+  - window_name: "Shell"
+    panes:
+      - nix-shell
+
+  - window_name: "Dashboard & Editor"
+    layout: even-horizontal
+    panes:
+      - shell_command_before: set_title Dashboard && sleep 40
+        shell_command: nix-shell --run "yarn panel"
+      - shell_command_before: set_title Editor && sleep 40
+        shell_command: nix-shell --run "yarn editor"
+
+  - window_name: "Backend"
+    panes:
+      - shell_command_before: set_title Databases
+        shell_command: 
+        - cd ../dev-databases-dockerized
+        - nix-shell --run "docker-compose up"
+      - shell_command_before: set_title API && sleep 20
+        shell_command: nix-shell --run "yarn new-api"
+
+  - window_name: "Commons"
+    panes:
+      - nix-shell --run "yarn commons"
+
+  - window_name: "UI"
+    panes:
+      - shell_command_before: sleep 20
+        shell_command: nix-shell --run "yarn ui"
+
+  - window_name: "View"
+    panes:
+      - shell_command_before: set_title View:API && sleep 40
+        shell_command: nix-shell --run "yarn view:api"
+      - shell_command_before: set_title View:Front && sleep 40
+        shell_command: nix-shell --run "yarn view:client"
+
+  - window_name: "Auth"
+    panes:
+      - shell_command:
+        - cd auth
+        - nix-shell --run "npm run dev"
+

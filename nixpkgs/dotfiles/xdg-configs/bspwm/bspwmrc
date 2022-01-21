@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# autostart
+pgrep -x sxhkd > /dev/null || sxhkd &
+pkill picom
+picom --experimental-backends &
+feh --bg-fill ~/syncthing/wallpaper_001.jpg
+~/.config/polybar/launch.sh 
+dunst -conf ~/.config/dunst/dunstrc &
+
+# monitors
+# ~/.local/share/scripts/set_bspwm_monitors.sh
+# bspc monitor eDP -d V VI VII VIII
+# bspc monitor HDMI-A-1 -d I II III IV
+
+bspc monitor eDP -d 1 2 3 4
+
+# window information
+bspc config border_width 0 
+bspc config window_gap 6 
+bspc config pointer_follows_monitor true
+bspc config focus_follows_pointer true
+
+# rules
+# bspc rule -a mumble state=floating follow=on focus=on
+bspc rule -a Zathura state=tiled
+bspc rule -a Emacs state=tiled

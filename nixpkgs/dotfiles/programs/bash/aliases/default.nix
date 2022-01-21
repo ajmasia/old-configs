@@ -2,14 +2,14 @@ import ./git.nix //
 {
   # System
   sce = "sudo lvim /etc/nixos/configuration.nix";
+  she = "sudo lvim /etc/nixos/hardware-configuration.nix";
   scs = "sudo nixos-rebuild switch";
-  sc = "cd ~/repos/configs/";
 
   # Home manager
   hm = "home-manager";
-  hme = "lvim ~/.config/nixpkgs/home.nix";
-  hms = "home-manager switch";
-  hmvs = "home-manager switch -v";
+  uce = "lvim ~/repos/configs/nixpkgs/home.nix";
+  ucs = "home-manager switch";
+  ucvs = "home-manager switch -v";
 
   # Shell
   c = "clear";

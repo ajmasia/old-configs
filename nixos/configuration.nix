@@ -65,10 +65,14 @@
       displayManager = {
         lightdm = {
           enable = true;
+          greeters = {
+            gtk = {
+              enable = true;
+              indicators = [ "~host" "~spacer" "~clock" "~spacer" "~session" "~a11y" "~power" ];
+
+            };
+          };
         };
-        # sessionCommands = ''
-        #   ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
-        # '';
       };
 
       windowManager = {
@@ -105,19 +109,19 @@
       enable = true;
     };
 
-    udev = {
-      packages = [
-        (pkgs.writeTextFile
-          {
-            name = "dygma";
-            text = ''
-              SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="2201", GROUP="users", MODE="0666"
-              SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="2200", GROUP="users", MODE="0666"
-            '';
-            destination = "/etc/udev/rules.d/50-dygma.rules";
-          })
-      ];
-    };
+    # udev = {
+    #   packages = [
+    #     (pkgs.writeTextFile
+    #       {
+    #         name = "dygma";
+    #         text = ''
+    #           SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="2201", GROUP="users", MODE="0666"
+    #           SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="2200", GROUP="users", MODE="0666"
+    #         '';
+    #         destination = "/etc/udev/rules.d/50-dygma.rules";
+    #       })
+    #   ];
+    # };
   };
 
   sound = {

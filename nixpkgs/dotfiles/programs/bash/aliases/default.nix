@@ -7,10 +7,10 @@ import ./git.nix //
 
   # User config
   hm = "home-manager";
-  uc = "cd ~/repos/configs";
-  uce = "lvim ~/repos/configs/nixpkgs/home.nix";
-  ucs = "home-manager switch";
-  ucvs = "home-manager switch -v";
+  hmd = "cd ~/repos/configs";
+  hme = "lvim ~/repos/configs/nixpkgs/home.nix";
+  hms = "home-manager switch";
+  hmsv = "home-manager switch -v";
 
   # Shell
   c = "clear";

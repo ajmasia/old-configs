@@ -5,8 +5,8 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 pkill picom
 picom --experimental-backends &
 feh --bg-fill ~/.config/wallpapers/wallpaper_001.jpg &
-~/.config/polybar/launch.sh 
 dunst -conf ~/.config/dunst/dunstrc &
+~/.config/polybar/launch.sh &
 
 # monitors
 # ~/.local/share/scripts/set_bspwm_monitors.sh
@@ -18,8 +18,18 @@ bspc monitor eDP -d 1 2 3 4
 # window information
 bspc config border_width 0 
 bspc config window_gap 6 
-bspc config pointer_follows_monitor true
+
 bspc config focus_follows_pointer true
+
+bspc config remove_disabled_monitors true
+bspc config merge_overlapping_monitors true
+
+bspc config pointer_follows_monitor true
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
 
 # rules
 # bspc rule -a mumble state=floating follow=on focus=on

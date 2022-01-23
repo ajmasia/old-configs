@@ -86,10 +86,10 @@ with builtins; {
     enable = true;
   };
 
-  rofi = {
-    enable = true;
-    theme = "${HOME_PATH}/.config/rofi/themes/User\ Themes/onedark.rasi";
-  };
+  # rofi = {
+  #   enable = true;
+  #   theme = "${HOME_PATH}/.config/rofi/themes/User\ Themes/onedark.rasi";
+  # };
 
   tmux = {
     baseIndex = 1;

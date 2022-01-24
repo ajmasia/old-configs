@@ -8,7 +8,7 @@ with builtins; {
     enable = true;
 
     settings = {
-      # background_opacity = 0.92;
+      background_opacity = 0.92;
       font = {
         size = 8;
         normal = {

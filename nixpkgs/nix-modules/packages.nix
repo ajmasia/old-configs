@@ -26,6 +26,10 @@ with pkgs; [
   libnotify
   xsel
   sxiv
+  bpytop
+
+  # fonts
+  # font-awesome
 
   # Tile window manager
   sxhkd
@@ -38,6 +42,7 @@ with pkgs; [
   spotify
   musescore
   cava
+  kazam
 
   # Browsers
   chromium
@@ -58,6 +63,9 @@ with pkgs; [
   pdfarranger
   flameshot
   xcolor
+  gimp
+  inkscape
+  libreoffice
 
   # Development
   docker-compose

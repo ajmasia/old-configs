@@ -141,15 +141,17 @@ ctrl + alt + p
 
 # Change volume
 XF86Audio{Raise,Lower}Volume
-    pactl set-sink-volume @DEFAULT_SINK@ {+,-}1%
+  ~/.local/share/scripts/vol.sh {up,down}
+    # pactl set-sink-volume @DEFAULT_SINK@ {+,-}1%
 
 # Toggle mute
 XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
+  ~/.local/share/scripts/vol.sh mute
+    # pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Toggle mic mute
 XF86AudioMicMute
-    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    # pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 #Brightness control
 XF86MonBrightnessDown

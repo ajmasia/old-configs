@@ -25,6 +25,7 @@ with pkgs; [
   dunst
   libnotify
   xsel
+  sxiv
 
   # Tile window manager
   sxhkd

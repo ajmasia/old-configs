@@ -33,6 +33,11 @@ with pkgs; {
       source = ../dotfiles/xdg-configs/rofi;
     };
 
+    "ranger" = {
+      recursive = true;
+      source = ../dotfiles/xdg-configs/ranger;
+    };
+
     # "rofi/plugins/rofiemoji" = {
     #   source = fetchFromGitHub {
     #     name = "rofiemoji";
@@ -53,6 +58,16 @@ with pkgs; {
 
     "wallpapers" = {
       source = ../../wallpapers;
+    };
+
+    "sxiv" = {
+      recursive = true;
+      source = ../dotfiles/xdg-configs/sxiv;
+    };
+
+    "dunst" = {
+      source = ../dotfiles/xdg-configs/dunst;
+      recursive = true;
     };
   };
 }

@@ -27,6 +27,7 @@ with pkgs; [
   xsel
   sxiv
   bpytop
+  jq
 
   # fonts
   # font-awesome

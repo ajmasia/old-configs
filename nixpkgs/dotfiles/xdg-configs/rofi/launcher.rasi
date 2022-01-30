@@ -9,15 +9,15 @@
 
 
 configuration {
-	font:							"Liga SFMono Nerd Font 12";
-  show-icons:                     true;
-	icon-theme: 					"Papirus";
-  display-drun: 					"";
-  drun-display-format:            "{name}";
-  disable-history:                false;
-  fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+	font:							    "Liga SFMono Nerd Font 12";
+  show-icons:           true;
+	icon-theme: 				  "Papirus";
+  display-drun: 			  "";
+  drun-display-format:  "{name}";
+  disable-history:      false;
+  fullscreen:           false;
+	hide-scrollbar: 			true;
+	sidebar-mode: 				false;
 }
 
 @import "colors.rasi"
@@ -26,10 +26,10 @@ window {
   transparency:                   "real";
   background-color:               @bg;
   text-color:                     @fg;
-	border:							3px;
-	border-color:					@bg3;
+	border:							            3px;
+	border-color:					          @bg3;
   border-radius:                  8px;
-	width:							600px;
+	width:							            600px;
   location:                       center;
   x-offset:                       0;
   y-offset:                       0;

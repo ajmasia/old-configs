@@ -1,9 +1,11 @@
 import ./git.nix //
+  import ./projects.nix //
 {
   # System
   sce = "sudo lvim /etc/nixos/configuration.nix";
   she = "sudo lvim /etc/nixos/hardware-configuration.nix";
   scs = "sudo nixos-rebuild switch";
+  logout = "kill -9 -1";
 
   # User config
   hm = "home-manager";

@@ -5,7 +5,6 @@ in
 with pkgs; [
   # Utils
   exa
-  bat
   fzf
   fzy
   htop
@@ -48,7 +47,7 @@ with pkgs; [
   # Browsers
   chromium
   google-chrome
-  opera
+  brave
 
   # Comunications
   tdesktop
@@ -58,6 +57,7 @@ with pkgs; [
   # Productivity
   synology-drive
   todoist-electron
+  todoist
   bitwarden
   obsidian
   syncthing
@@ -67,6 +67,7 @@ with pkgs; [
   gimp
   inkscape
   libreoffice
+  calibre
 
   # Development
   docker-compose

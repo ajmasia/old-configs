@@ -27,7 +27,6 @@ with builtins; {
   };
 
   bash = {
-    # Options: https://github.com/nix-community/home-manager/blob/master/modules/programs/bash.nix
     enable = true;
     historyIgnore = [ "ls" "cd" "exit" ];
     sessionVariables = {
@@ -36,9 +35,45 @@ with builtins; {
     initExtra = ''
       export PATH="$HOME/.local/bin:$PATH"
       export PATH="$HOME/.local/share/scripts:$PATH"
+
+      # Load Environment Variables
+      if [ -f .env ]; then
+        export $(cat .env | grep -v '#' | sed 's/\r$//' | awk '/=/ {print $1}' )
+      fi
+    '';
+    profileExtra = ''
+      setxkbmap -option caps:escape
+      if [ -e /home/ajmasia/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ajmasia/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
     '';
     shellOptions = [ "histappend" "checkwinsize" "extglob" "globstar" "checkjobs" "autocd" ];
     shellAliases = import ../dotfiles/programs/bash/aliases;
+  };
+
+  # zsh = {
+  #   enable = true;
+  #   # historyIgnore = [ "ls" "cd" "exit" ];
+  #   sessionVariables = {
+  #     EDITOR = "vim";
+  #   };
+  #   initExtra = ''
+  #     export PATH="$HOME/.local/bin:$PATH"
+  #     export PATH="$HOME/.local/share/scripts:$PATH"
+
+  #     # Load Environment Variables
+  #     if [ -f .env ]; then
+  #       export $(cat .env | grep -v '#' | sed 's/\r$//' | awk '/=/ {print $1}' )
+  #     fi
+  #   '';
+  #   profileExtra = ''
+  #     setxkbmap -option caps:escape
+  #     if [ -e /home/ajmasia/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ajmasia/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+  #   '';
+  #   # shellOptions = [ "histappend" "checkwinsize" "extglob" "globstar" "checkjobs" "autocd" ];
+  #   shellAliases = import ../dotfiles/programs/bash/aliases;
+  # };
+
+  bat = {
+    enable = true;
   };
 
   git = {
@@ -68,6 +103,7 @@ with builtins; {
   starship = {
     enable = true;
     enableBashIntegration = true;
+    # enableZshIntegration = true;
     settings = {
       add_newline = false;
 
